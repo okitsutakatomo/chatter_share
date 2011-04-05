@@ -1,6 +1,6 @@
 {
   "name": "Chatter Share (Unofficial)",
-    "version": "0.11",
+    "version": "0.12",
     "description": "現在開いているページを、ChatterにPOSTするエクステンション",
     "page_action" :{
             "id": "ChatterAction",
@@ -25,15 +25,5 @@
       "content/script.js"
         ],
       "run_at": "document_end"
-    },
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-        ],
-      "js": [
-        "content/show_icon.js"
-        ],
-      "run_at": "document_start"
     }]
 }
