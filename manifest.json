@@ -1,0 +1,39 @@
+{
+  "name": "Chatter Share (Unofficial)",
+    "version": "0.1",
+    "description": "現在開いているページを、ChatterにPOSTするエクステンション",
+    "page_action" :{
+            "id": "ChatterAction",
+      "default_icon": "icon-16x16.png"
+    },
+    "background_page": "background.html",
+    "icons": {
+      "128": "icon-128x128.png",
+      "16": "icon-16x16.png"
+    },
+    "permissions": [
+      "tabs",
+    "http://*/*",
+    "https://*/*"
+      ],
+    "content_scripts": [{
+      "matches": [
+        "https://ap.salesforce.com/home/home.jsp*"
+        ],
+      "js": [
+        "content/jquery-1.5.2.min.js",
+      "content/script.js"
+        ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+        ],
+      "js": [
+        "content/show_icon.js"
+        ],
+      "run_at": "document_start"
+    }]
+}
