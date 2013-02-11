@@ -4,6 +4,7 @@ chrome.extension.sendRequest({}, function(receive) {
 
   $("#url").val(receive.url);
   $("#urlName").val(receive.title);
+  $("#publishersharebutton").removeAttr("disabled");
 
   $("#publishereditablearea").focus();
 });
