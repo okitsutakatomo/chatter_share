@@ -1,13 +1,12 @@
-<script>
-
+(function () {
   var pageInfo = {
     "title": "",
     "url": "",
     "summary": ""
   };
 
-  function getPageInfo() { 
-    chrome.tabs.executeScript(null, { file: "content_script.js" }); 
+  function getPageInfo() {
+    chrome.tabs.executeScript(null, { file: "content_script.js" });
   };
 
   function getMessages(request, sender, callback) {
@@ -36,5 +35,4 @@
 
   //contentScriptからのリクエストを待機する
   chrome.extension.onRequest.addListener(getMessages);
-
-</script>
+})();
