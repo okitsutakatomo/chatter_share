@@ -1,7 +1,11 @@
 chrome.extension.sendRequest({}, function(receive) {
-  var text = receive.title + " " + receive.url;
-  $("#publishereditablearea").val(text);
+  // リンクタブを表示する
+  $("li[label='LinkPost'] a").click();
+
+  $("#url").val(receive.url);
+  $("#urlName").val(receive.title);
+  $("#publishersharebutton").removeAttr("disabled");
+
   $("#publishereditablearea").focus();
-  $("#publishereditablearea").css("height", "40px");
 });
 
